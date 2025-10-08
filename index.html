@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سورة البقرة - آيات ١٠١-١٠٥ | Surah Al-Baqarah - Verses 101-105</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:wght@400;700&family=Lato:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.8;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            padding-top: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            background: linear-gradient(45deg, #8b4513, #a0522d);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .audio-player-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .audio-player-section h3 {
+            color: #8b4513;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .audio-player-section p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .audio-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        audio {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 25px;
+            outline: none;
+            height: 54px;
+        }
+
+        audio::-webkit-media-controls-panel {
+            background: linear-gradient(45deg, #8b4513, #a0522d);
+        }
+
+        audio:focus {
+            outline: 2px solid #8b4513;
+            outline-offset: 2px;
+        }
+
+        .reciter-info {
+            font-family: 'Amiri', serif;
+            color: #8b4513;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        .verse-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        .verse-btn {
+            background: linear-gradient(45deg, #8b4513, #a0522d);
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            min-width: 80px;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .verse-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .verse-btn.active {
+            background: linear-gradient(45deg, #a0522d, #8b4513);
+            box-shadow: 0 0 15px rgba(139, 69, 19, 0.5);
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .arabic-title {
+            font-family: 'Amiri', serif;
+            font-size: 2rem;
+            color: #8b4513;
+            margin-bottom: 10px;
+            direction: rtl;
+        }
+
+        .page-info {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .verses-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            overflow-x: hidden;
+        }
+
+        .verse {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: linear-gradient(to right, #f8f9fa, #ffffff);
+            border-left: 5px solid #8b4513;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        .verse:hover {
+            transform: translateX(5px);
+        }
+
+        .verse-number {
+            display: inline-block;
+            background: linear-gradient(45deg, #8b4513, #a0522d);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .arabic-text {
+            font-family: 'Amiri Quran', 'Amiri', serif;
+            font-size: 2rem;
+            line-height: 2.8;
+            text-align: right;
+            direction: rtl;
+            color: #1a472a;
+            margin: 20px 0;
+            padding: 25px;
+            background: #f8fdf9;
+            border-radius: 8px;
+            border: 2px solid #8b4513;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: none;
+        }
+
+        .english-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-top: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        .reflection-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            overflow-x: hidden;
+        }
+
+        .reflection-section h2 {
+            color: #8b4513;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .reflection-point {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: linear-gradient(to right, #fff, #f8f9fa);
+            border-left: 4px solid #a0522d;
+            border-radius: 8px;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        .reflection-point h3 {
+            color: #8b4513;
+            margin-bottom: 15px;
+        }
+
+        .reflection-arabic {
+            font-family: 'Amiri', serif;
+            font-size: 1.3rem;
+            line-height: 2.2;
+            text-align: right;
+            direction: rtl;
+            color: #2c3e50;
+            padding: 15px;
+            background: #f8fdf9;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: none;
+        }
+
+        .reflection-english {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #555;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-text {
+            color: #666;
+            font-style: italic;
+            margin: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .header {
+                padding: 20px 15px;
+                margin-bottom: 20px;
+            }
+
+            .arabic-title {
+                font-size: 1.5rem;
+            }
+
+            .header h1 {
+                font-size: 1.3rem;
+            }
+
+            .page-info {
+                font-size: 0.85rem;
+            }
+
+            .audio-player-section {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+
+            .audio-player-section h3 {
+                font-size: 1.1rem;
+            }
+
+            .audio-player-section p {
+                font-size: 0.85rem;
+            }
+
+            audio {
+                max-width: 100%;
+            }
+
+            .verse-selector {
+                gap: 6px;
+            }
+
+            .verse-btn {
+                padding: 10px 14px;
+                font-size: 0.85rem;
+                flex: 0 0 calc(33.333% - 6px);
+                text-align: center;
+            }
+
+            .reciter-info {
+                font-size: 1rem;
+            }
+
+            .verses-container {
+                padding: 20px 15px;
+                margin-bottom: 20px;
+            }
+
+            .verse {
+                padding: 15px;
+                margin-bottom: 25px;
+            }
+
+            .verse-number {
+                font-size: 0.85rem;
+                padding: 4px 12px;
+            }
+
+            .arabic-text {
+                font-size: 1.5rem;
+                line-height: 2.4;
+                padding: 15px;
+            }
+
+            .english-text {
+                font-size: 0.95rem;
+                padding: 12px;
+            }
+
+            .reflection-section {
+                padding: 20px 15px;
+                margin-bottom: 20px;
+            }
+
+            .reflection-section h2 {
+                font-size: 1.4rem;
+            }
+
+            .reflection-point {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+
+            .reflection-point h3 {
+                font-size: 1rem;
+            }
+
+            .reflection-arabic {
+                font-size: 1.1rem;
+                line-height: 2;
+                padding: 12px;
+            }
+
+            .reflection-english {
+                font-size: 0.95rem;
+                padding: 12px;
+            }
+
+            .footer {
+                padding: 20px 15px;
+            }
+
+            .footer-text {
+                font-size: 0.9rem;
+            }
+
+            .nav-link {
+                padding: 8px 15px;
+                font-size: 0.85rem;
+                margin: 0 5px;
+            }
+
+            .navigation {
+                margin-bottom: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .arabic-title {
+                font-size: 1.3rem;
+            }
+
+            .header h1 {
+                font-size: 1.1rem;
+            }
+
+            .verse-btn {
+                flex: 0 0 calc(50% - 6px);
+                padding: 12px 10px;
+                font-size: 0.8rem;
+            }
+
+            .arabic-text {
+                font-size: 1.3rem;
+                line-height: 2.2;
+                padding: 12px;
+            }
+
+            .english-text {
+                font-size: 0.9rem;
+            }
+
+            .reflection-arabic {
+                font-size: 1rem;
+                line-height: 1.9;
+            }
+
+            .reflection-english {
+                font-size: 0.9rem;
+            }
+
+            .nav-link {
+                display: block;
+                margin: 5px auto;
+                max-width: 200px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .navigation {
+                display: none;
+            }
+            .audio-player-section {
+                display: none;
+            }
+        }
+    </style>
+    <script>
+        let currentVerse = 101;
+        
+        function playVerse(verseNumber) {
+            currentVerse = verseNumber;
+            const audio = document.getElementById('quranAudio');
+            const source = document.getElementById('audioSource');
+            
+            // Format verse number to 3 digits (e.g., 101)
+            const formattedVerse = String(verseNumber).padStart(3, '0');
+            
+            // Update audio source
+            source.src = `https://everyayah.com/data/Abdul_Basit_Murattal_192kbps/002${formattedVerse}.mp3`;
+            
+            // Load and play
+            audio.load();
+            audio.play();
+            
+            // Update button styles
+            document.querySelectorAll('.verse-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+        
+        // Auto-play next verse when current one ends
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById('quranAudio');
+            
+            audio.addEventListener('ended', function() {
+                if (currentVerse < 105) {
+                    const nextBtn = document.querySelector(`[onclick="playVerse(${currentVerse + 1})"]`);
+                    if (nextBtn) {
+                        nextBtn.click();
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <a href="#" class="nav-link">← Previous Page</a>
+            <a href="#" class="nav-link">Next Page →</a>
+        </div>
+
+        <div class="header">
+            <div class="arabic-title">سورة البقرة</div>
+            <h1>Surah Al-Baqarah (The Cow)</h1>
+            <div class="page-info">Page 16 | Verses 101-105</div>
+        </div>
+
+        <div class="audio-player-section">
+            <h3>🎧 استماع للآيات | Listen to the Verses</h3>
+            <p>القارئ: عبد الباسط عبد الصمد | Reciter: Abdul Basit Abdus Samad</p>
+            
+            <div class="audio-controls">
+                <audio id="quranAudio" controls>
+                    <source id="audioSource" src="https://everyayah.com/data/Abdul_Basit_Murattal_192kbps/002101.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                
+                <div class="verse-selector">
+                    <button class="verse-btn active" onclick="playVerse(101)">Verse 101</button>
+                    <button class="verse-btn" onclick="playVerse(102)">Verse 102</button>
+                    <button class="verse-btn" onclick="playVerse(103)">Verse 103</button>
+                    <button class="verse-btn" onclick="playVerse(104)">Verse 104</button>
+                    <button class="verse-btn" onclick="playVerse(105)">Verse 105</button>
+                </div>
+                
+                <div class="reciter-info">
+                    بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+                </div>
+            </div>
+        </div>
+
+        <div class="verses-container">
+            <div class="verse">
+                <span class="verse-number">Verse 101</span>
+                <div class="arabic-text">
+                    وَلَمَّا جَآءَهُمْ رَسُولٌۭ مِّنْ عِندِ ٱللَّهِ مُصَدِّقٌۭ لِّمَا مَعَهُمْ نَبَذَ فَرِيقٌۭ مِّنَ ٱلَّذِينَ أُوتُوا۟ ٱلْكِتَٰبَ كِتَٰبَ ٱللَّهِ وَرَآءَ ظُهُورِهِمْ كَأَنَّهُمْ لَا يَعْلَمُونَ
+                </div>
+                <div class="english-text">
+                    And when a messenger from Allah came to them confirming that which was with them, a party of those who had been given the Scripture threw the Scripture of Allah behind their backs as if they did not know [what it contained].
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 102</span>
+                <div class="arabic-text">
+                    وَٱتَّبَعُوا۟ مَا تَتْلُوا۟ ٱلشَّيَٰطِينُ عَلَىٰ مُلْكِ سُلَيْمَٰنَ ۖ وَمَا كَفَرَ سُلَيْمَٰنُ وَلَٰكِنَّ ٱلشَّيَٰطِينَ كَفَرُوا۟ يُعَلِّمُونَ ٱلنَّاسَ ٱلسِّحْرَ وَمَآ أُنزِلَ عَلَى ٱلْمَلَكَيْنِ بِبَابِلَ هَٰرُوتَ وَمَٰرُوتَ ۚ وَمَا يُعَلِّمَانِ مِنْ أَحَدٍ حَتَّىٰ يَقُولَآ إِنَّمَا نَحْنُ فِتْنَةٌۭ فَلَا تَكْفُرْ ۖ فَيَتَعَلَّمُونَ مِنْهُمَا مَا يُفَرِّقُونَ بِهِۦ بَيْنَ ٱلْمَرْءِ وَزَوْجِهِۦ ۚ وَمَا هُم بِضَآرِّينَ بِهِۦ مِنْ أَحَدٍ إِلَّا بِإِذْنِ ٱللَّهِ ۚ وَيَتَعَلَّمُونَ مَا يَضُرُّهُمْ وَلَا يَنفَعُهُمْ ۚ وَلَقَدْ عَلِمُوا۟ لَمَنِ ٱشْتَرَىٰهُ مَا لَهُۥ فِى ٱلْءَاخِرَةِ مِنْ خَلَٰقٍۢ ۚ وَلَبِئْسَ مَا شَرَوْا۟ بِهِۦٓ أَنفُسَهُمْ ۚ لَوْ كَانُوا۟ يَعْلَمُونَ
+                </div>
+                <div class="english-text">
+                    And they followed [instead] what the devils had recited during the reign of Solomon. It was not Solomon who disbelieved, but the devils disbelieved, teaching people magic and that which was revealed to the two angels at Babylon, Harut and Marut. But the two angels do not teach anyone unless they say, "We are a trial, so do not disbelieve [by practicing magic]." And [yet] they learn from them that by which they cause separation between a man and his wife. But they do not harm anyone through it except by permission of Allah. And they learn that which harms them and does not benefit them. But they certainly knew that whoever purchased it would have no share in the Hereafter. And wretched is that for which they sold themselves, if they only knew.
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 103</span>
+                <div class="arabic-text">
+                    وَلَوْ أَنَّهُمْ ءَامَنُوا۟ وَٱتَّقَوْا۟ لَمَثُوبَةٌۭ مِّنْ عِندِ ٱللَّهِ خَيْرٌۭ ۖ لَّوْ كَانُوا۟ يَعْلَمُونَ
+                </div>
+                <div class="english-text">
+                    And if they had believed and feared Allah, then the reward from Allah would have been [far] better, if they only knew.
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 104</span>
+                <div class="arabic-text">
+                    يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لَا تَقُولُوا۟ رَٰعِنَا وَقُولُوا۟ ٱنظُرْنَا وَٱسْمَعُوا۟ ۗ وَلِلْكَٰفِرِينَ عَذَابٌ أَلِيمٌۭ
+                </div>
+                <div class="english-text">
+                    O you who have believed, say not [to Allah's Messenger], "Ra'ina" but say, "Unthurna" and listen. And for the disbelievers is a painful punishment.
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 105</span>
+                <div class="arabic-text">
+                    مَّا يَوَدُّ ٱلَّذِينَ كَفَرُوا۟ مِنْ أَهْلِ ٱلْكِتَٰبِ وَلَا ٱلْمُشْرِكِينَ أَن يُنَزَّلَ عَلَيْكُم مِّنْ خَيْرٍۢ مِّن رَّبِّكُمْ ۗ وَٱللَّهُ يَخْتَصُّ بِرَحْمَتِهِۦ مَن يَشَآءُ ۚ وَٱللَّهُ ذُو ٱلْفَضْلِ ٱلْعَظِيمِ
+                </div>
+                <div class="english-text">
+                    Neither those who disbelieve from the People of the Scripture nor the polytheists wish that any good should be sent down to you from your Lord. But Allah selects for His mercy whom He wills, and Allah is the possessor of great bounty.
+                </div>
+            </div>
+        </div>
+
+        <div class="reflection-section">
+            <h2>💭 تأملات يومية | Daily Reflections</h2>
+            
+            <div class="reflection-point">
+                <h3>📕 نبذ الكتاب | Casting the Scripture Behind</h3>
+                <div class="reflection-arabic">
+                    جاءهم رسول من عند الله مصدّق لما معهم، فنبذوا كتاب الله وراء ظهورهم كأنهم لا يعلمون! هذا قمة الجحود والكفران. أن تملك كتاب الله ثم تتجاهله وتلقيه وراء ظهرك هو خيانة عظمى. كم منّا يفعل ذلك اليوم مع القرآن؟ نملكه لكن لا نقرأه، نعرفه لكن لا نطبّقه، نحفظه لكن لا نتدبّره. اللهم لا تجعلنا ممن نبذوا كتابك!
+                </div>
+                <div class="reflection-english">
+                    A messenger came to them from Allah confirming what was with them, yet they cast Allah's book behind their backs as if they did not know! This is the peak of denial and ingratitude. To possess Allah's book and then ignore it and throw it behind your back is a great betrayal. How many of us do this today with the Quran? We own it but don't read it, we know it but don't apply it, we memorize it but don't reflect on it. O Allah, do not make us among those who cast Your book aside!
+                </div>
+            </div>
+
+            <div class="reflection-point">
+                <h3>🔮 السحر والشياطين | Magic and Devils</h3>
+                <div class="reflection-arabic">
+                    اتّبعوا ما تتلوا الشياطين على ملك سليمان. سليمان عليه السلام لم يكفر، بل الشياطين كفروا يعلّمون الناس السحر. السحر حرام وكفر، يضر ولا ينفع. يتعلم الناس ما يفرّقون به بين المرء وزوجه. لكن لا ضرر إلا بإذن الله. من باع آخرته بالسحر فقد باعها بثمن بخس. لو أنهم آمنوا واتقوا لكان ثواب الله خيراً لهم. السحر طريق الشيطان والإيمان طريق الرحمن.
+                </div>
+                <div class="reflection-english">
+                    They followed what the devils recited about Solomon's kingdom. Solomon did not disbelieve, but the devils disbelieved, teaching people magic. Magic is forbidden and disbelief, it harms and does not benefit. People learn to cause separation between husband and wife. But there is no harm except by Allah's permission. Whoever sold his Hereafter for magic has sold it for a miserable price. If they had believed and feared Allah, Allah's reward would have been better for them. Magic is the path of Satan, and faith is the path of the Most Merciful.
+                </div>
+            </div>
+
+            <div class="reflection-point">
+                <h3>👼 هاروت وماروت | Harut and Marut</h3>
+                <div class="reflection-arabic">
+                    الملكان هاروت وماروت في بابل كانا يحذّران: "إنما نحن فتنة فلا تكفر". يعلّمان الناس السحر كابتلاء وفتنة، لكن مع تحذير واضح. من يتعلم السحر رغم التحذير فقد اختار الكفر بإرادته. الفتن في حياتنا كثيرة، والتحذيرات واضحة. من يقع في الحرام رغم التحذيرات فلا عذر له. اللهم احفظنا من الفتن ما ظهر منها وما بطن!
+                </div>
+                <div class="reflection-english">
+                    The two angels Harut and Marut in Babylon used to warn: "We are but a trial, so do not disbelieve." They taught people magic as a test and trial, but with clear warning. Whoever learns magic despite the warning has chosen disbelief by his own will. Trials in our lives are many, and the warnings are clear. Whoever falls into sin despite warnings has no excuse. O Allah, protect us from trials, both apparent and hidden!
+                </div>
+            </div>
+
+            <div class="reflection-point">
+                <h3>💍 التفريق بين الزوجين | Separating Spouses</h3>
+                <div class="reflection-arabic">
+                    يتعلمون ما يفرقون به بين المرء وزوجه. التفريق بين الزوجين من أحب الأعمال إلى إبليس. الأسرة هي نواة المجتمع، وتدميرها هدف شيطاني. كم من بيوت هُدمت بالسحر والشعوذة! لكن تذكّر: لا ضرر إلا بإذن الله. التوكل على الله والأذكار والرقية الشرعية حصن من كل سوء. اللهم احفظ بيوتنا وأسرنا من كل شر!
+                </div>
+                <div class="reflection-english">
+                    They learn to cause separation between husband and wife. Separating spouses is among the most beloved deeds to Satan. The family is the nucleus of society, and its destruction is a satanic goal. How many homes have been destroyed by magic and sorcery! But remember: there is no harm except by Allah's permission. Reliance on Allah, remembrance, and Quranic healing are a fortress from all evil. O Allah, protect our homes and families from all harm!
+                </div>
+            </div>
+
+            <div class="reflection-point">
+                <h3>🗣️ الأدب مع النبي | Manners with the Prophet</h3>
+                <div class="reflection-arabic">
+                    يا أيها الذين آمنوا لا تقولوا راعنا وقولوا انظرنا واسمعوا. كلمة "راعنا" كان اليهود يستخدمونها للسخرية. فأُمر المؤمنون باستخدام كلمة أفضل "انظرنا". الأدب مع النبي صلى الله عليه وسلم واجب، واختيار الكلمات المناسبة مهم. حتى في النية الحسنة، يجب تجنب ما قد يُساء فهمه أو استخدامه للإساءة. الأدب الرفيع مع رسول الله من كمال الإيمان.
+                </div>
+                <div class="reflection-english">
+                    O you who have believed, say not "Ra'ina" but say "Unthurna" and listen. The word "Ra'ina" was used by Jews for mockery. So believers were commanded to use a better word "Unthurna." Good manners with the Prophet ﷺ are obligatory, and choosing appropriate words is important. Even with good intentions, one must avoid what might be misunderstood or used for harm. High courtesy with Allah's Messenger is from the perfection of faith.
+                </div>
+            </div>
+
+            <div class="reflection-point">
+                <h3>💚 الحسد من أهل الكتاب | Envy from People of the Scripture</h3>
+                <div class="reflection-arabic">
+                    لا يود الذين كفروا من أهل الكتاب ولا المشركين أن ينزّل عليكم من خير من ربكم. الحسد يعمي القلوب عن رؤية الخير. لا يريدون للمسلمين أي خير بسبب الحسد والبغض. لكن الله يختص برحمته من يشاء، والله ذو الفضل العظيم. رحمة الله ليست حكراً على أحد، والله يعطي فضله لمن يشاء. نسأل الله من فضله العظيم!
+                </div>
+                <div class="reflection-english">
+                    Those who disbelieve from the People of the Scripture and the polytheists do not wish that any good be sent down to you from your Lord. Envy blinds hearts from seeing goodness. They do not want any good for Muslims due to envy and hatred. But Allah selects for His mercy whom He wills, and Allah is the possessor of great bounty. Allah's mercy is not exclusive to anyone, and Allah gives His bounty to whom He wills. We ask Allah from His great bounty!
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-text">
+                "وَٱللَّهُ يَخْتَصُّ بِرَحْمَتِهِۦ مَن يَشَآءُ ۚ وَٱللَّهُ ذُو ٱلْفَضْلِ ٱلْعَظِيمِ"
+            </div>
+            <div class="footer-text">
+                "But Allah selects for His mercy whom He wills, and Allah is the possessor of great bounty"
+            </div>
+            <div class="footer-text">
+                May this daily reflection bring us closer to Allah and increase our understanding of His words
+            </div>
+            <div class="footer-text">
+                🤲 آمين يا رب العالمين | Ameen Ya Rabb Al-Alameen 🤲
+            </div>
+        </div>
+    </div>
+</body>
+</html>
